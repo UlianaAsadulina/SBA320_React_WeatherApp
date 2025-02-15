@@ -34,9 +34,34 @@ export default function CityPage() {
 
 
 
-    return city ? (
+    return weather ? (
             <div>
-                <h1>{city} Weather Page</h1>
+                <h1>{weather.name}, {weather.sys.country}</h1>
+                <h1>{Math.round(weather.main.temp)}°C</h1>
+                <h3>{weather.weather[0].description}</h3>
+                <h3></h3>
+                <h3>H: {Math.round(weather.main.temp_max)}°   L: {Math.round(weather.main.temp_min)}°</h3>
+                <div >
+                    <div>
+                        <p>FEELS LIKE</p>
+                        <p>{Math.round(weather.main.feels_like)}°</p>
+                    </div>
+                    <div>
+                        <p>HUMIDITY</p>
+                        <p>{weather.main.humidity}%</p>
+                    </div> 
+                    <div>
+                        <p>WIND</p>
+                        <p>{weather.wind.speed} m/s</p>
+                    </div>   
+                    <div>
+                        <p>VISIBILITY</p>
+                        <p>{weather.visibility}</p>
+                    </div> 
+                </div>
+              
+              
+                
                 
             </div>
 
