@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { WiThermometer, WiHumidity, WiStrongWind, WiFog, WiRaindrops } from "react-icons/wi";
 import { WiDaySunny,WiDayCloudy, WiDayCloudyHigh, WiCloud, WiRain, WiShowers, WiSnow, WiStormShowers } from "react-icons/wi";
+import "./CityPage.css"
 
 
 export default function CityPage() {
@@ -50,7 +51,7 @@ export default function CityPage() {
 
                 const responce = await fetch(url);
                 const data = await responce.json();
-                console.log(data)
+                //console.log(data)
                 setWeather(data);
 
             } catch (e) {
@@ -83,6 +84,9 @@ export default function CityPage() {
                         <p>HUMIDITY</p>
                         <p>{weather.main.humidity}%</p>
                     </div> 
+                </div>
+                <div className="weather-details">
+
                     <div className="weather-box">
                         <WiStrongWind size={30} />
                         <p>WIND</p>

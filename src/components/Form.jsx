@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { FaSearch } from "react-icons/fa"; //for search icon
 import Button from "./Button";
 import Input from "./Input";
 
@@ -57,11 +58,11 @@ export default function Form() {
 
     return (
         <div className="form-container">
-              <div className="input-wrapper">
+            <div className="input-wrapper">
             <Input value={city} onChange={handleChange} placeholder="Enter city name..." 
                     className="input-field"/>
-            <Button onClick={getList} className="search-button">
-                 search
+            <Button onClick={getList} className="search-button">            
+                <FaSearch size={18} />                
             </Button>
             </div>
             {list ? loaded() : loading() }

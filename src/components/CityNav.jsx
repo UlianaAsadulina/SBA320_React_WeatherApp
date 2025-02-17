@@ -5,7 +5,7 @@ export default function CityNav() {
     
     return (
         <nav>
-            <Link to="/">Main</Link> <br />
+            <Link to="/Cincinnati">Home</Link> <br />
             <Link to="/New York">New York City</Link> <br />
             <Link to="/Los Angeles">Los Angeles</Link> <br />
         

@@ -1,3 +1,3 @@
-export default function Input({value, onChange}) {
-    return <input type="text" value={value} onChange={onChange}/>
+export default function Input({className, value, onChange}) {
+    return <input type="text" className={className} value={value} onChange={onChange}/>
 }

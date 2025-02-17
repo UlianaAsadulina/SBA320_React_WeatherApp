@@ -1,0 +1,47 @@
+.weather-container {
+    font-family: "Poppins", sans-serif;
+    margin: auto;
+    padding: 20px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #89cff0, #29f0a3);
+    color: white;
+    text-align: center;
+
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.weather-container h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.weather-container h3 {
+    font-size: 1.2rem;
+    text-transform: capitalize;
+}
+
+.weather-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.weather-box {
+    width: 45%;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.weather-box p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+.weather-box svg {
+    margin-bottom: 5px;
+    color: white;
+}

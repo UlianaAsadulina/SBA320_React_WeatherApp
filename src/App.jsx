@@ -8,8 +8,6 @@ import Form from './components/Form'
 
 
 function App() {
-  
-
 
   return (
     <>
@@ -21,9 +19,9 @@ function App() {
           
         </div>
         <div className='rightContainer'>
-          <Routes>
+          <Routes>              
               <Route path="/" element={<MainPage />} />
-              <Route path="/:city" element={<CityPage />} />  
+              <Route path="/:city" element={<CityPage />} />                
             </Routes>
         </div>
       </div>

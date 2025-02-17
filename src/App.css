@@ -1,56 +1,78 @@
 body {
   font-family: 'Poppins', sans-serif;
-}
-
-.mainContainer {
-  border: 1px solid black;
+  background: linear-gradient(to bottom, #87CEFA, #4682B4);
+  color: white;
+  margin: 0;
+  padding: 0;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
 }
 
-.leftContainer {
-  border: 1px solid black;
-  padding: 20px;
-  width: 30%;
-  min-height: 100%;
-}
-
-.rightContainer {
-  border: 1px solid black;
-  padding: 20px;
-  width: 70%;
-  min-height: 100%;
+/* App Main Title */
+h1 {
   text-align: center;
+  font-size: 2rem;
+  margin: 20px 0;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
 
+/* Layout App Containers */
+.mainContainer {
+  display: flex;
+  width: 95%;
+  max-width: 1200px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+/* Left Sidebar (Form & CityNav) */
+.leftContainer {
+  width: 30%;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* gap: 15px; */
+}
+
+/* Right Content Area */
+.rightContainer {
+  width: 70%;
+  padding: 15px;
 }
 
 .form-container {
-  max-width: 400px;
-  margin: auto;
-  padding: 20px;
-  border-radius: 15px;
+ width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 10px;
   background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
   text-align: center;
+  align-items: baseline;
 }
 
 .input-wrapper {
   display: flex;
   align-items: center;
-  border-radius: 8px;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.8);
+  width: 100%;  
 }
 
-.input-field {
-  flex-grow: 1;
+.input-field { 
   border: none;
   padding: 10px;
   font-size: 1rem;
   outline: none;
+  max-width: 70%;
 }
 
 .search-button {
-  background: #007bff;
+  background: #00aeff;
   color: white;
   border: none;
   padding: 10px 15px;
@@ -94,49 +116,59 @@ body {
   margin-top: 10px;
 }
 
-.weather-container {  
-  margin: auto;
-  padding: 20px;
-  border-radius: 15px;
-  background: linear-gradient(135deg, #89CFF0, #29f0a3);
-  color: white;
-  text-align: center;
-  
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-}
 
-.weather-container h1 {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.weather-container h3 {
-  font-size: 1.2rem;
-  text-transform: capitalize;
-}
-
-.weather-details {
+nav {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: 15px;
-}
-
-.weather-box {
-  width: 48%;
-  background: rgba(255, 255, 255, 0.2);
-  padding: 10px;
+  flex-direction: column;
+  align-items: left;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 15px;
   border-radius: 10px;
-  margin-top: 10px;
 }
 
-.weather-box p {
-  margin: 5px 0;
-  font-size: 1rem;
-}
-
-.weather-box svg {
-  margin-bottom: 5px;
+nav a {
+  text-decoration: none;
   color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 8px;
+  width: 100%;
+  text-align: left;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+nav a:hover {
+  width: 90%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: scale(1.05);
+}
+
+
+/* Responsive Design for small devices */
+@media (max-width: 768px) {
+  .mainContainer {
+      flex-direction: column;
+      width: 95%;
+  }
+
+  .leftContainer,
+  .rightContainer {
+      width: 100%;
+  }
+
+
+  nav {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  nav a {
+    font-size: 0.9rem;
+    padding: 6px;
+  }
+  
+  
+
 }
