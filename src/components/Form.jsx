@@ -33,15 +33,15 @@ export default function Form() {
 
     const loaded = () => {
         return (
-            <ol >
+            <ul className="city-list" >
                 {list.map((element, index) => (
-                    <li key={index}>
-                        <Link to={`/${element.name}`}> 
+                    <li key={index} className="city-item">
+                        <Link to={`/${element.name}`} className="city-link"> 
                             {element.name}, {element.state}, {element.country}
                         </Link>                        
                     </li>
                 ))}
-            </ol>
+            </ul>
 
 
         );
@@ -49,18 +49,21 @@ export default function Form() {
 
     // Function for when data doesn't exist.
     const loading = () => {
-        return <p>City not founded. Enter valid name in the field above</p>;
+        return <p className="not-found-message">City not found. Please enter a valid name.</p>;
     };
 
     //   // If data exists, run the loaded function; otherwise, run loading.
     //   return data ? loaded() : loading();
 
     return (
-        <div>
-            <Input value={city} onChange={handleChange} />
-            <Button onClick={getList}>
+        <div className="form-container">
+              <div className="input-wrapper">
+            <Input value={city} onChange={handleChange} placeholder="Enter city name..." 
+                    className="input-field"/>
+            <Button onClick={getList} className="search-button">
                  search
             </Button>
+            </div>
             {list ? loaded() : loading() }
 
         </div>

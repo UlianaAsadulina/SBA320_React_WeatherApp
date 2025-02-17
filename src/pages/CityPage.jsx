@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { WiThermometer, WiHumidity, WiStrongWind, WiFog } from "react-icons/wi";
-import { WiDaySunny, WiCloud, WiRain, WiSnow, WiStormShowers } from "react-icons/wi";
+import { WiThermometer, WiHumidity, WiStrongWind, WiFog, WiRaindrops } from "react-icons/wi";
+import { WiDaySunny,WiDayCloudy, WiDayCloudyHigh, WiCloud, WiRain, WiShowers, WiSnow, WiStormShowers } from "react-icons/wi";
 
 
 export default function CityPage() {
@@ -32,6 +32,7 @@ export default function CityPage() {
             case "snow":
                 return <WiSnow size={60} />;
             case "mist":
+                return <WiRaindrops size={60} />;
             case "fog":
                 return <WiFog size={60} />;
             default:
