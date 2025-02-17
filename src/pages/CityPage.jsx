@@ -5,7 +5,7 @@ import { WiDaySunny,WiDayCloudy, WiDayCloudyHigh, WiCloud, WiRain, WiShowers, Wi
 import "./CityPage.css"
 
 
-export default function CityPage() {
+export default function CityPage({unit}) {
     const [weather, setWeather] = useState();
     const param = useParams();
     const city = param.city;
@@ -47,7 +47,7 @@ export default function CityPage() {
             try {
                 const key = import.meta.env.VITE_API_KEY;
 
-                const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`;
+                const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=${unit}`;
 
                 const responce = await fetch(url);
                 const data = await responce.json();
@@ -60,7 +60,7 @@ export default function CityPage() {
         }
 
         getData();
-    }, [city])
+    }, [city, unit])
 
 
 
@@ -68,7 +68,7 @@ export default function CityPage() {
     return weather ? (
             <div className="weather-container">
                 <h1>{weather.name}, {weather.sys.country}</h1>
-                <h1>{Math.round(weather.main.temp)}°C</h1>
+                <h1>{Math.round(weather.main.temp)}°{unit === "metric" ? "C" : "F"}</h1>
                 <div>{getWeatherIcon(weather.weather[0].description)}</div>
                 <h3>{weather.weather[0].description}</h3>
                 <h3>H: {Math.round(weather.main.temp_max)}° L: {Math.round(weather.main.temp_min)}°</h3>
@@ -90,7 +90,7 @@ export default function CityPage() {
                     <div className="weather-box">
                         <WiStrongWind size={30} />
                         <p>WIND</p>
-                        <p>{weather.wind.speed} m/s</p>
+                        <p>{weather.wind.speed} {unit === "metric" ? "m/s" : "mph"}</p>
                     </div>   
                     <div className="weather-box">
                         <WiFog size={30} />

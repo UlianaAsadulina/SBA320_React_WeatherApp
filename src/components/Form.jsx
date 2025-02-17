@@ -4,7 +4,7 @@ import { FaSearch } from "react-icons/fa"; //for search icon
 import Button from "./Button";
 import Input from "./Input";
 
-export default function Form() {
+export default function Form({ unit }) {
     //State to hold entered city name
     const [city, setCity] = useState("");
 
