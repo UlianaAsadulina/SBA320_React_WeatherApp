@@ -1,7 +1,9 @@
-# React + Vite
+SBA 320 React + Vitr Weather App
+A simple weather application that allows users to:
+- Search for cities and get real-time weather data
+- View temperature, humidity, wind speed, and more
+- Switch between Metric (°C, m/s) and Imperial (°F, mph) units with a toggle slider
+- Navigate quickly with preset city links
 
-SBA 320 React Weather App
+Uses the OpenWeather API
 
-based on https://openweathermap.org/api
-
-VITE_API_KEY=637e348874d449cfa3da1cb4db95d69e
