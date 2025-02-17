@@ -64,3 +64,8 @@ body {
   margin: 5px 0;
   font-size: 1rem;
 }
+
+.weather-box svg {
+  margin-bottom: 5px;
+  color: white;
+}
