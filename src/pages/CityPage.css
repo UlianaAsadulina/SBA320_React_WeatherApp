@@ -6,8 +6,8 @@
     background: linear-gradient(135deg, #89cff0, #29f0a3);
     color: white;
     text-align: center;
-
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    
 }
 
 .weather-container h1 {
@@ -25,11 +25,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 .weather-box {
-    width: 45%;
+    width: 44%;
     background: rgba(255, 255, 255, 0.2);
     padding: 10px;
     border-radius: 10px;

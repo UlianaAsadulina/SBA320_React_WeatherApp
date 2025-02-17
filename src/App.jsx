@@ -18,12 +18,16 @@ function App() {
 
   return (
     <>
-      <div>
+      <div className="title-container">
         <h1>Weather App</h1>
-        <div className='unit-toggle-container'>
-                <button onClick={toggleUnit} className='unit-toggle'>
-                    {unit === "metric" ? "Switch to Imperial (°F, mph)" : "Switch to Metric (°C, m/s)"}
-                </button>
+        <div className="unit-toggle-container">
+          <label className="switch">
+            <input type="checkbox" onChange={toggleUnit} checked={unit === "imperial"} />
+            <span className="slider"></span>
+          </label>
+          <span className="unit-label">
+            {unit === "metric" ? "°C, m/s" : "°F, mph"}
+          </span>
         </div>
       </div>
       

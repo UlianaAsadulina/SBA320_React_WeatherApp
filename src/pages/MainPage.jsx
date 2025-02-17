@@ -9,6 +9,7 @@ export default function MainPage({unit}) {
             <p>Or select the city name from the list on the left side</p>
             <br />
             <h3>This application uses the {unit} measurement system</h3>
+            <p>If you want to switch from this measurement system, use slider on the top right corner </p>
             
 
         </>        

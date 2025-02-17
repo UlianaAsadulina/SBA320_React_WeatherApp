@@ -5,38 +5,86 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: column; 
   min-height: 100vh;
 }
 
+.title-container {
+  display: flex;
+}
+
 /* App Main Title */
-h1 {
+.title-container h1 {
   text-align: center;
   font-size: 2rem;
-  margin: 20px 0;
+  margin: 20px 100px 15px 100px;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .unit-toggle-container {
-  text-align: center;
+  width: 30%;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
   margin-bottom: 15px;
+  gap: 10px;
 }
 
-.unit-toggle {
-  padding: 10px 15px;
-  background: #ffcc00;
-  color: #333;
-  font-size: 1rem;
-  border: none;
-  border-radius: 8px;
+/* Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider */
+.slider {
+  position: absolute;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ddd;
+  transition: 0.4s;
+  border-radius: 25px;
 }
 
-.unit-toggle:hover {
-  background: #ffdd44;
-  transform: scale(1.05);
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 3.5px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+/* When the switch is checked (Imperial mode) */
+input:checked+.slider {
+  background-color: #72d6f5;
+}
+
+input:checked+.slider::before {
+  transform: translateX(24px);
+}
+
+/* Unit Label */
+.unit-label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
 }
 
 /* Layout App Containers */
@@ -48,7 +96,7 @@ h1 {
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
+
 }
 
 /* Left Sidebar (Form & CityNav) */
@@ -58,7 +106,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* gap: 15px; */
+  
 }
 
 /* Right Content Area */
@@ -68,7 +116,7 @@ h1 {
 }
 
 .form-container {
- width: 100%;
+  width: 100%;
   margin-bottom: 15px;
   padding: 10px;
   border-radius: 10px;
@@ -81,10 +129,10 @@ h1 {
 .input-wrapper {
   display: flex;
   align-items: center;
-  width: 100%;  
+  width: 100%;
 }
 
-.input-field { 
+.input-field {
   border: none;
   padding: 10px;
   font-size: 1rem;
@@ -96,7 +144,7 @@ h1 {
   background: #00aeff;
   color: white;
   border: none;
-  padding: 10px 15px;
+  padding: 10px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -170,26 +218,32 @@ nav a:hover {
 /* Responsive Design for small devices */
 @media (max-width: 768px) {
   .mainContainer {
-      flex-direction: column;
-      width: 95%;
+    flex-direction: column;
+    width: 95%;
   }
 
   .leftContainer,
   .rightContainer {
-      width: 100%;
+    width: 100%;
+  }
+  .leftContainer {
+    padding-left: 0;
   }
 
+  .form-container {
+    width: 92%;
+  }
 
   nav {
-    width: 100%;
+    width: 92%;
     padding: 10px;
   }
-  
+
   nav a {
     font-size: 0.9rem;
     padding: 6px;
   }
-  
-  
+
+
 
 }
