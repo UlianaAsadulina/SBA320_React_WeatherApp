@@ -176,7 +176,7 @@ input:checked+.slider::before {
 .city-item {
   background: rgba(255, 255, 255, 0.3);
   margin: 5px 0;
-  padding: 5px;
+  padding: 8px;
   border-radius: 8px;
 }
 

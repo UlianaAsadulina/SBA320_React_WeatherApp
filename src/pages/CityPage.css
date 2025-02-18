@@ -1,6 +1,8 @@
 .weather-container {
     font-family: "Poppins", sans-serif;
-    margin: auto;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
     padding: 10px 15px 30px 15px;
     border-radius: 15px;
     background: linear-gradient(135deg, #89cff0, #29f0a3);
@@ -11,13 +13,13 @@
 }
 
 .weather-container h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: bold;
     margin-bottom: 5px;
 }
 
 .weather-container h3 {
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-transform: capitalize;
   
 }
@@ -26,20 +28,43 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-top: 10px;
+    margin-top: 5px;
 }
+
+.forecast-gallery {
+    display: flex;
+    justify-content: center;
+    width: 95%;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 10px;
+}
+
+.forecast-item {
+    flex: 0 0 auto;
+    width: 100px;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
 
 .weather-box {
     width: 44%;
     background: rgba(255, 255, 255, 0.2);
     padding: 10px;
     border-radius: 10px;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .weather-box p {
     margin: 5px 0;
-    font-size: 1rem;
+    font-size: 0.7rem;
 }
 
 .weather-box svg {

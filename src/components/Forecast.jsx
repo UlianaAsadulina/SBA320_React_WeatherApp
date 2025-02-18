@@ -2,9 +2,7 @@ import { useEffect, useState } from "react";
 import { useKey } from "./KeyContext";
 import GetWeatherIcon from "./GetWeatherIcon";
 
-export default function Forecast({ LAT, LON, unit }) {
-    // const [coordinats, setCoordinats] = useState({LAT: params.LAT, LON: params.LON});
-    const [currentIndex, setCurrentIndex] = useState(0); //for scroll throught data
+export default function Forecast({ LAT, LON, unit }) {    
 
     const [intervalForecasts, setForecast] = useState([]);
 
@@ -33,33 +31,24 @@ export default function Forecast({ LAT, LON, unit }) {
 
 
 
-    // Step 3: Define functions to navigate through the data
-    const next = () => {
-
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % intervalForecasts.length);
-    };
-
-    const prev = () => {
-        setCurrentIndex((prevIndex) => (prevIndex !== 0) ? intervalForecasts.length - 1 : 0);
-    };
-
-
 
     return (
-        <div> {intervalForecasts.map((element, index) => (
-            <div key={index}>
-                <p> {element.dt_txt}</p>
-                <h3>{Math.round(element.main.temp)}°{unit === "metric" ? "C" : "F"}</h3>
-                <GetWeatherIcon description={element.weather[0].description} />
-                <p>{element.weather[0].description}</p>
+        <>
+            <h3>Next 5 day Forecast</h3>            
+           
+                
+                <div className="forecast-gallery">
+                    {intervalForecasts.map((element, index) => (
+                        <div key={index} className="forecast-item">
+                            <p>{element.dt_txt}</p>
+                            <h3>{Math.round(element.main.temp)}°{unit === "metric" ? "C" : "F"}</h3>
+                            <GetWeatherIcon description={element.weather[0].description} />
+                            {/* <p>{element.weather[0].description}</p> */}
+                        </div>
+                    ))}
+                </div>
+  
+        </>
 
-            </div>
-            ))}     
-
-                <p> {currentIndex + 1} of {intervalForecasts.length} </p>
-                <button onClick={prev}>◀</button>
-                <button onClick={next}>▶</button>
-        </div>    
-
-                )
+        )
 }
