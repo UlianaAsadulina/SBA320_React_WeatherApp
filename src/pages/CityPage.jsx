@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { WiThermometer, WiHumidity, WiStrongWind, WiFog, WiRaindrops } from "react-icons/wi";
 import { WiDaySunny,WiDayCloudy, WiDayCloudyHigh, WiCloud, WiRain, WiShowers, WiSnow, WiStormShowers } from "react-icons/wi";
 import "./CityPage.css"
+import Forecast from "../components/Forecast";
 
 
 export default function CityPage({unit}) {
@@ -51,7 +52,7 @@ export default function CityPage({unit}) {
 
                 const responce = await fetch(url);
                 const data = await responce.json();
-                //console.log(data)
+                console.log(data)
                 setWeather(data);
 
             } catch (e) {
@@ -72,6 +73,7 @@ export default function CityPage({unit}) {
                 <div>{getWeatherIcon(weather.weather[0].description)}</div>
                 <h3>{weather.weather[0].description}</h3>
                 <h3>H: {Math.round(weather.main.temp_max)}° L: {Math.round(weather.main.temp_min)}°</h3>
+                <Forecast LAT={weather.coord.lat} LON={weather.coord.lon} unit={unit} /> 
             
                 <div className="weather-details">
                     <div className="weather-box">

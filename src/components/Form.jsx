@@ -21,12 +21,11 @@ export default function Form({ unit }) {
 
     // Function to fetch data.
     async function getList() {
-        if (!city.trim()) return;
-        setList([]);
+        
         try {
             const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${key}`);
             const data = await response.json();
-            console.log(data)
+            //console.log(data);
             setList(data);
         } catch (e) {
             console.error(e)
