@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FaSearch } from "react-icons/fa"; //for search icon
 import Button from "./Button";
 import Input from "./Input";
+import { useKey } from "./KeyContext";
 
 export default function Form({ unit }) {
     //State to hold entered city name
@@ -15,8 +16,9 @@ export default function Form({ unit }) {
     //State to hold list of cities
     const [list, setList] = useState();
 
+    const { key } = useKey(); // Access API key from KeyContext
 
-    const key = import.meta.env.VITE_API_KEY;
+    // const key = import.meta.env.VITE_API_KEY;
 
 
     // Function to fetch data.

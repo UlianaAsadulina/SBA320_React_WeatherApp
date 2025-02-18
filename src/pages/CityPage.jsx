@@ -4,9 +4,10 @@ import { WiThermometer, WiHumidity, WiStrongWind, WiFog, WiRaindrops } from "rea
 import { WiDaySunny,WiDayCloudy, WiDayCloudyHigh, WiCloud, WiRain, WiShowers, WiSnow, WiStormShowers } from "react-icons/wi";
 import "./CityPage.css"
 import Forecast from "../components/Forecast";
+import { useKey } from "../components/KeyContext";
 
 
-export default function CityPage({unit}) {
+export default function CityPage({ unit }) {
     const [weather, setWeather] = useState();
     const param = useParams();
     const city = param.city;
@@ -42,13 +43,15 @@ export default function CityPage({unit}) {
         }
     };
 
+    const { key } = useKey(); // Access API key from KeyContext
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=${unit}`;
 
     useEffect(() => {
         async function getData() {
             try {
-                const key = import.meta.env.VITE_API_KEY;
+                
 
-                const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=${unit}`;
+                
 
                 const responce = await fetch(url);
                 const data = await responce.json();
