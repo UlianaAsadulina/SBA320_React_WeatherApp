@@ -11,7 +11,7 @@ export default function CityNav() {
         
             <Link to="/Chicago">Chicago</Link> <br />
             <Link to="/Houston">Houston</Link> <br />
-            <Link to="/Phoenix">Phoenix</Link> <br />
+            
             <Link to="/Philadelphia">Philadelphia</Link> <br />
             <Link to="/Charlotte">Charlotte</Link> <br />
             <Link to="/Seattle">Seattle</Link> <br />
